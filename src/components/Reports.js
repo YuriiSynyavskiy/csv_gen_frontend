@@ -71,7 +71,7 @@ export default function Reports() {
             history.push('/login')
         }
     }, [isLogined])
-    const [schemas, setSchemas] = useState();
+    const [schemas, setSchemas] = useState([]);
     useEffect(async () => {
         let res = await getSchemas()
         setSchemas(res)
@@ -142,7 +142,7 @@ export default function Reports() {
     }
     return (
         <Collapse>
-            {schemas &&
+            {schemas.length &&
                 schemas.map(schema => (
 
                     <Panel header={
