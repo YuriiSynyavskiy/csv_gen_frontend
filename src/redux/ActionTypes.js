@@ -1,0 +1,3 @@
+export const SET_USER_DATA = 'SET_USER_DATA'
+export const CLEAR_SESSION = 'CLEAR_SESSION'
+export const START_SESSION = 'START_SESSION'
