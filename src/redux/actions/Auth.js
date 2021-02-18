@@ -21,7 +21,6 @@ export const setUserData = () => {
 export const signIn = (cred, redirect, check) => {
 
     return async dispatch => {
-        try {
             let url = process.env.REACT_APP_BASE_URL;
             fetch(url + "/auth/",
                 {
@@ -38,8 +37,7 @@ export const signIn = (cred, redirect, check) => {
                     dispatch(setUserData());
                     redirect();
 
-                })
-        } catch (error) { check(true) }
+                }).catch(()=>check(true))
     }
 }
 
