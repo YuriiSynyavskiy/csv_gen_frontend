@@ -35,7 +35,7 @@ export default function Schema(props) {
     const [form] = Form.useForm()
     const [edited, setEdited] = useState(false);
     function onFinish(event) {
-        event.columns.sort(function (a, b) { return a - b });
+        event.columns.sort(function (a, b) { return a.order - b.order });
         for (let i = 0; i < event.columns.length; i++) {
             event.columns[i].order = i;
         }
